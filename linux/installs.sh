@@ -1,3 +1,3 @@
-sudo apt-get install vim-gtk
-sudo apt-get install screen
-sudo apt-get install openssh-server
+sudo apt-get install -y vim-gtk
+sudo apt-get install -y screen
+sudo apt-get install -y openssh-server
