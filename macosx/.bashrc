@@ -1,0 +1,8 @@
+alias l='ls -al'
+alias md='mkdir'
+alias rd='rmdir'
+alias gpr='git pull --rebase'
+alias gri='git rebase --interactive'
+alias gs='git status'
+alias gb='git branch'
+alias gb='git branch'
