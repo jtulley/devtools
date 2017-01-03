@@ -7,3 +7,7 @@ set smartindent
 
 autocmd FileType go setlocal shiftwidth=3 tabstop=3 noet
 
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+
