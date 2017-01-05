@@ -8,3 +8,5 @@ git clone https://github.com/fatih/vim-go.git ~/.vim/bundle/vim-go
 cp .vimrc ~/
 vim -c "GoInstallBinaries"
 
+mkdir -p ~/.config/git
+cp ignore ~/.config/git

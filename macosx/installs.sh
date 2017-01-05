@@ -18,3 +18,5 @@ cp .vimrc ~/
 
 vim -c "GoInstallBinaries"
 
+mkdir -p ~/.config/git
+cp ignore ~/.config/git
