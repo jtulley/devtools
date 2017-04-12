@@ -8,11 +8,14 @@ brew update
 brew install vim --with-lua && brew install macvim --with-lua
 brew link macvim
 brew linkapps macvim
+brew install tmux
+brew install zsh
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+brew install reattach-to-user-namespace --wrap-pbcopy-pbpaste && brew link reattach-to-user-namespace
 
-mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-
-git clone https://github.com/fatih/vim-go.git ~/.vim/bundle/vim-go
+mkdir -p ~/.vim/bundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
 
 cp .vimrc ~/
 
