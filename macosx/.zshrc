@@ -7,7 +7,8 @@ export ZSH=/Users/jefftulley/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -85,6 +86,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export EDITOR='vim'
 
 alias l='ls -al'
 alias md='mkdir'
@@ -99,11 +101,21 @@ alias gr='./gradlew'
 alias gitalias='echo "Git aliases: gs, gpr, gri, gb, gum"'
 alias ga='gitalias'
 alias d='docker'
+alias givm='gvim'
+alias vi='vim'
+alias .='source'
+alias _gvim='/usr/local/bin/gvim'
+alias gvim='vim'
+alias gvs='govendor sync'
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export GOPATH=/Users/jefftulley/go
 export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/usr/local/opt/play/
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
 
 
 #MAKE GUIDS
@@ -113,8 +125,6 @@ alias guid="uuidgen | perl -ne 'print lc' | tr -d '\n' | pbcopy"
 alias setJdk6='export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)'
 alias setJdk7='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)'
 alias setJdk8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
-
-
 
 
 # set cursors to use non-shared history by default
@@ -157,4 +167,7 @@ myCommands() {
     echo "Aliases:"
     echo "l='ls -al', md='mkdir', rd='rmdir', ls='ls -G', gs='git status', gpr='git pull --rebase', gri='git rebase --interactive',"
     echo "gb='git branch', gum='git checkout master && git fetch upstream && git merge upstream/master', gr='./gradlew', ga='gitalias', d='docker',"
+    myCommands_work
 }
+source /Users/jefftulley/gitwa/tug/kubernetes-functions.sh
+source ~/.zshrc_work

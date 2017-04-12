@@ -23,3 +23,7 @@ vim -c "GoInstallBinaries"
 
 mkdir -p ~/.config/git
 cp ignore ~/.config/git
+
+cp .zshrc ~/
+touch ~/.zshrc_work
+echo Remember to put work-specific zsh functions in ~/.zshrc_work
