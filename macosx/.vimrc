@@ -22,6 +22,7 @@ let mapleader = "\<Space>"
       "}}}
    "}}}
 
+    Plugin 'leafgarland/typescript-vim'
     Plugin 'ervandew/supertab'
     Plugin 'JulesWang/css.vim'
     Plugin 'ekalinin/Dockerfile.vim'
@@ -36,6 +37,8 @@ let mapleader = "\<Space>"
     Plugin 'pangloss/vim-javascript'
     Plugin 'mxw/vim-jsx'
     Plugin 'sbdchd/neoformat'
+    Plugin 'udalov/kotlin-vim'
+    Plugin 'freitass/todo.txt-vim'
 
     " Plugin 'sbdchd/neoformat' {{{2
     let g:neoformat_try_formatprg = 0
@@ -112,6 +115,8 @@ let mapleader = "\<Space>"
      "Plugin 'jeetsukumaran/vim-buffersaurus' {{{2
        Plugin 'jeetsukumaran/vim-buffersaurus'
      "}}}
+
+      Plugin 'tpope/vim-vinegar'
 
      "Plugin 'tpope/vim-fugitive' {{{2
       Plugin 'tpope/vim-fugitive'
@@ -286,7 +291,6 @@ highlight Comment cterm=italic
         set wildmode=full
         set gdefault "always use the g flag in %s///g
         set ignorecase smartcase incsearch hlsearch wrapscan
-        nnoremap <C-L> :nohlsearch<CR><C-L>
     "}}}
 
 
@@ -352,6 +356,14 @@ map <C-m> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
 nnoremap <leader><Space> :w<CR>
 
+nnoremap <Leader>h  :set splitright&<CR> :vsp<CR> :exec ":e ".expand("%:h")<CR>
+nnoremap <Leader>j  :set splitbelow<CR> :sp<CR> :exec ":e ".expand("%:h")<CR>
+nnoremap <Leader>k  :set splitbelow &<CR> :sp<CR> :exec ":e ".expand("%:h")<CR>
+nnoremap <Leader>l  :set splitright<CR> :vsp<CR> :exec ":e ".expand("%:h")<CR>
+nnoremap <Leader>q  :q<CR>
+
+nnoremap <Leader>= <C-w>= "Resize all windows
+
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
 autocmd FileType go nmap <leader>t  <Plug>(go-test)
 
@@ -372,6 +384,10 @@ autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
 autocmd FileType go nmap <Leader>i <Plug>(go-imports)
 autocmd FileType go nmap <Leader>s <Plug>(go-info)
 
+autocmd filetype crontab setlocal nobackup nowritebackup
+
+set nobackup nowritebackup
+
 let g:go_auto_sameids = 1
 
 "colorscheme tweaks {{{2
@@ -381,3 +397,5 @@ let g:go_auto_sameids = 1
       hi StatusLine ctermfg=67 ctermbg=236 cterm=bold guifg=#a9b7c6 guibg=#424242 gui=bold
       hi StatusLineNC ctermfg=188 ctermbg=236 cterm=NONE guifg=#a9b7c6 guibg=#423243 gui=NONE
     endif
+
+set directory=~/.vimswap//
