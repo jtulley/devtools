@@ -30,3 +30,4 @@ touch ~/.zshrc_work
 brew tap AdoptOpenJDK/openjdk
 brew cask install adoptopenjdk8
 echo Remember to put work-specific zsh functions in ~/.zshrc_work
+git config --global --edit
