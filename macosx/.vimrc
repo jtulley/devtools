@@ -1,24 +1,35 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
 let g:isLinux = system('uname') == "Linux\n"
 let g:isMac = !g:isLinux
 
 let mapleader = "\<Space>"
 
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
 "plugins {{{1
    "setup Vundle {{{2
       "install setup {{{3
-         let vundleDir = expand('~/.vim/bundle/')
-         let vundleDoInstall = 0
-         if !isdirectory(vundleDir)
-            let gitUrl = "https://github.com/gmarik/vundle.git"
-            call mkdir(vundleDir)
-            exec "!git clone ".gitUrl." ".vundleDir."vundle"
-            let vundleDoInstall = 1
-         endif
-      "normal setup {{{3
-         filetype off
-         set runtimepath=$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/bundle/vundle
-         call vundle#begin()
-         Plugin 'gmarik/vundle'
+         "let vundleDir = expand('~/.vim/bundle/')
+         "let vundleDoInstall = 0
+         "if !isdirectory(vundleDir)
+            "let gitUrl = "https://github.com/gmarik/vundle.git"
+            "call mkdir(vundleDir)
+            "exec "!git clone ".gitUrl." ".vundleDir."vundle"
+            "let vundleDoInstall = 1
+         "endif
+      ""normal setup {{{3
+         "filetype off
+         "set runtimepath=$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/bundle/vundle
+         "call vundle#begin()
+         "Plugin 'gmarik/vundle'
       "}}}
    "}}}
 
@@ -222,9 +233,6 @@ let mapleader = "\<Space>"
     set runtimepath-=~/.vim "remove first so that the add occurs at the end
     set runtimepath+=~/.vim
     filetype plugin indent on
-    if vundleDoInstall
-        BundleInstall!
-    endif
   "}}}
 
 autocmd FileType go setlocal shiftwidth=3 tabstop=3 noet
@@ -234,11 +242,7 @@ autocmd FileType go setlocal shiftwidth=3 tabstop=3 noet
   set t_ut= "fix the weird background erasing crap
   set ttyfast
   if g:isMac
-    if has("gui-running")
-        colorscheme default
-    else
-        colorscheme darcula
-    endif
+    colorscheme default
   elseif g:isLinux
     colorscheme tcsoft
   endif
